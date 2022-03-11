@@ -17,7 +17,7 @@ export class DialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public editData: any, //info para editar con Material
     private formBuilder: FormBuilder, 
     private api: ApiService,
-    private dialogRef: MatDialogRef<DialogComponent>, //NOT NECESARY, close dialog box after saving
+    public dialogRef: MatDialogRef<DialogComponent>, //NOT NECESARY, close dialog box after saving
     ) { }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class DialogComponent implements OnInit {
       todoName: ['', Validators.required],
       category: ['', Validators.required],
       date: ['', Validators.required],
-      listo: ['', Validators.required],
+      listo: [''],
     });
 
     // console.log(this.editData);
@@ -39,7 +39,9 @@ export class DialogComponent implements OnInit {
       this.todoForm.controls['listo'].setValue(this.editData.listo);
     }
   }
-
+  closeDialogAdd() {
+    this.dialogRef.close('save');
+  }
   addTodo(){
     if(!this.editData){
     // console.log(this.todoForm.value)
@@ -48,7 +50,7 @@ export class DialogComponent implements OnInit {
             next: (res) =>{ 
               // alert("Todo agregado con exito!");
               this.todoForm.reset();
-              this.dialogRef.close('save');
+              this.closeDialogAdd();
               
             },
             error: () =>{

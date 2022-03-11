@@ -69,11 +69,12 @@ ngOnInit(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
       // data: {name: this.name, animal: this.animal},
-    }).afterClosed().subscribe(val => {
-      // console.log('The dialog was closed');
-       if(val === 'save'){
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      // if(result === 'save'){
         this.getTodos();
-       }
+      // }
     });
   }
 
@@ -84,10 +85,11 @@ editTodo(row:any){
   const dialogRef = this.dialog.open(DialogComponent, {
     width: '350px',
     data:row,
-  }).afterClosed().subscribe(val => {
-    if(val === 'update'){
+  });
+  dialogRef.afterClosed().subscribe(val => {
+    // if(val === 'update'){
       this.getTodos();
-    }
+    // }
   });
 }
 
