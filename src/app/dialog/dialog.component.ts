@@ -39,9 +39,9 @@ export class DialogComponent implements OnInit {
       this.todoForm.controls['listo'].setValue(this.editData.listo);
     }
   }
-  closeDialogAdd() {
-    this.dialogRef.close('save');
-  }
+  // closeDialogAdd() {
+    
+  // }
   addTodo(){
     if(!this.editData){
     // console.log(this.todoForm.value)
@@ -50,8 +50,8 @@ export class DialogComponent implements OnInit {
             next: (res) =>{ 
               // alert("Todo agregado con exito!");
               this.todoForm.reset();
-              this.closeDialogAdd();
-              
+              // this.closeDialogAdd();
+              this.dialogRef.close('save');
             },
             error: () =>{
               alert("Error agregando todo");

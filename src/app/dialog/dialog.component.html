@@ -1,15 +1,18 @@
 <h1 mat-dialog-title>Add Todo</h1>
 <div mat-dialog-content>
-    <form action="" [formGroup]="todoForm">
+    <form action="" [formGroup]="todoForm" ngDefaultControl>
         <mat-form-field appearance="outline">
             <mat-label>Todo</mat-label>
-            <input formControlName="todoName" placeholder="" matInput>
+            <input formControlName="todoName" name="todoName" placeholder=""
+                matInput
+                ngDefaultControl>
             <!--   <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Category</mat-label>
-            <mat-select formControlName="category">
+            <mat-select formControlName="category" name="category"
+                ngDefaultControl>
                 <mat-option value="one">First option</mat-option>
                 <mat-option value="two">Second option</mat-option>
             </mat-select>
@@ -17,13 +20,15 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Choose a date</mat-label>
-            <input formControlName="date" matInput [matDatepicker]="picker">
+            <input formControlName="date" name="date" matInput
+                [matDatepicker]="picker" ngDefaultControl>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
 
-        <mat-checkbox formControlName="listo" class="halfmargen">Listo?</mat-checkbox>
+        <mat-checkbox formControlName="listo" name="listo" class="halfmargen"
+            ngDefaultControl>Listo?</mat-checkbox>
         <!-- <mat-form-field appearance="fill">
         <mat-label>Textarea</mat-label>
         <textarea matInput></textarea>
