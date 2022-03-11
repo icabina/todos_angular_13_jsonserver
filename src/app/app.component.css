@@ -33,7 +33,6 @@ input{
 .example-table-container {
   position: relative;
   min-height: 200px;
-  max-height: 400px;
   overflow: auto;
 }
 
@@ -87,3 +86,4 @@ h1{
   font-size: 30px;
   padding: 20px 20px;
 }
+

@@ -25,6 +25,7 @@ export class DialogComponent implements OnInit {
       todoName: ['', Validators.required],
       category: ['', Validators.required],
       date: ['', Validators.required],
+      listo: ['', Validators.required],
     });
 
     // console.log(this.editData);
@@ -35,7 +36,7 @@ export class DialogComponent implements OnInit {
       this.todoForm.controls['todoName'].setValue(this.editData.todoName);
       this.todoForm.controls['category'].setValue(this.editData.category);
       this.todoForm.controls['date'].setValue(this.editData.date);
-      // this.todoForm.controls['listo'].setValue(this.editData.listo);
+      this.todoForm.controls['listo'].setValue(this.editData.listo);
     }
   }
 
@@ -45,9 +46,10 @@ export class DialogComponent implements OnInit {
         if(this.todoForm.valid){
           this.api.postTodo(this.todoForm.value).subscribe({
             next: (res) =>{ 
-              alert("Todo agregado con exito!");
+              // alert("Todo agregado con exito!");
               this.todoForm.reset();
-              this.dialogRef.close("save");
+              this.dialogRef.close('save');
+              
             },
             error: () =>{
               alert("Error agregando todo");
@@ -64,7 +66,7 @@ export class DialogComponent implements OnInit {
 updateTodo(){
   this.api.putProduct(this.todoForm.value, this.editData.id).subscribe({
     next: (res)=>{
-      alert("Todo updated!");
+     // alert("Todo updated!");
       this.todoForm.reset();
       this.dialogRef.close('update');
     },

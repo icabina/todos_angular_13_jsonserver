@@ -23,6 +23,7 @@
         </mat-form-field>
 
 
+        <mat-checkbox formControlName="listo" class="halfmargen">Listo?</mat-checkbox>
         <!-- <mat-form-field appearance="fill">
         <mat-label>Textarea</mat-label>
         <textarea matInput></textarea>
@@ -31,7 +32,9 @@
 </div>
 
 <div mat-dialog-action>
-    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button mat-raised-button color="primary" mat-dialog-close
-        (click)="addTodo()">{{actionBtn}}</button>
+    <div class="space"><button mat-raised-button color="warn"
+            mat-dialog-close>Close</button></div>
+    <div class="space"><button mat-raised-button color="primary"
+            mat-dialog-close
+            (click)="addTodo()">{{actionBtn}}</button></div>
 </div>

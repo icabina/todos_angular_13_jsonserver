@@ -69,13 +69,11 @@ ngOnInit(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
       // data: {name: this.name, animal: this.animal},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
+    }).afterClosed().subscribe(val => {
       // console.log('The dialog was closed');
-      // if(result === 'save'){
+       if(val === 'save'){
         this.getTodos();
-      // }
+       }
     });
   }
 
@@ -86,14 +84,19 @@ editTodo(row:any){
   const dialogRef = this.dialog.open(DialogComponent, {
     width: '350px',
     data:row,
-  });
-
-  dialogRef.afterClosed().subscribe(result => {
-    this.getTodos();
+  }).afterClosed().subscribe(val => {
+    if(val === 'update'){
+      this.getTodos();
+    }
   });
 }
 
 
+// dialogRef.afterClosed().subscribe(result => {
+//   console.log(`Dialog result: ${result}`); // Pizza!
+// });
+
+// dialogRef.close('Pizza!');
 
 
   getTodos(){
@@ -117,7 +120,7 @@ editTodo(row:any){
 deleteTodo(id:number){
   this.api.deleteProduct(id).subscribe({
     next: (res)=>{
-      alert("Todo eliminado!");
+      // alert("Todo eliminado!");
       this.getTodos();
     },
     error: () =>{
