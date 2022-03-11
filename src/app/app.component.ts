@@ -73,9 +73,9 @@ ngOnInit(): void {
 
     dialogRef.afterClosed().subscribe(result => {
       // console.log('The dialog was closed');
-      if(result === 'save'){
+      // if(result === 'save'){
         this.getTodos();
-      }
+      // }
     });
   }
 
