@@ -17,7 +17,7 @@ export class DialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public editData: any, //info para editar con Material
     private formBuilder: FormBuilder, 
     private api: ApiService,
-    public dialogRef: MatDialogRef<DialogComponent>, //NOT NECESARY, close dialog box after saving
+    public dialogRef: MatDialogRef<DialogComponent>,
     ) { }
 
   ngOnInit(): void {
