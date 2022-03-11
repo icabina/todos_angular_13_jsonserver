@@ -1,0 +1,21 @@
+{
+  "todoList": [
+    {
+      "todoName": "hola",
+      "category": "two",
+      "date": "2022-03-11T05:00:00.000Z",
+      "id": 3,
+      "listo": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

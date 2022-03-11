@@ -1,0 +1,89 @@
+mat-toolbar{
+  background-color: #5CD2C5 !important;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+:host {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+.mat-form-field,
+mat-form-field,
+mat-form-field *,
+matInput,
+input{
+    width: 100% !important;
+}
+.fila{
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/* Structure */
+.example-container {
+  position: relative;
+}
+
+.example-table-container {
+  position: relative;
+  min-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.example-loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-rate-limit-reached {
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Column Widths */
+.mat-column-number,
+.mat-column-state {
+  max-width: 64px;
+}
+
+.mat-column-created {
+  max-width: 124px;
+}
+#iris{
+  dislplay:inline-block;
+  margin: auto;
+  width: auto;
+  max-height: 40px;
+}
+h1{
+  color: #648D8D !important;
+  font-weight: 600;
+  text-align: center;
+  font-size: 40px;
+}
+
+.mat-flat-button.mat-warn, .mat-raised-button.mat-warn, .mat-fab.mat-warn, .mat-mini-fab.mat-warn {
+  background-color: #5CD2C5;
+  width: 100% !important;
+  font-size: 30px;
+  padding: 20px 20px;
+}
