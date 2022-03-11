@@ -68,7 +68,6 @@ ngOnInit(): void {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
-      // data: {name: this.name, animal: this.animal},
     })
 
     dialogRef.afterClosed().subscribe(result => {
@@ -93,12 +92,6 @@ editTodo(row:any){
   });
 }
 
-
-// dialogRef.afterClosed().subscribe(result => {
-//   console.log(`Dialog result: ${result}`); // Pizza!
-// });
-
-// dialogRef.close('Pizza!');
 
 
   getTodos(){
